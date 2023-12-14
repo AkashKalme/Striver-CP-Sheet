@@ -1,5 +1,5 @@
-// A. Pasha and Stick
-// https://codeforces.com/problemset/problem/610/A
+// B. Triangles on a Rectangle
+// https://codeforces.com/problemset/problem/1620/B
 
 #include <bits/stdc++.h>
 
@@ -30,21 +30,25 @@ using namespace std;
 
 void solve()
 {
-	int n;
-	cin >> n;
-	if(n%2==1)
+	int res = 0;
+	int w, h;
+	cin >> w >> h;
+	for(int q=0; q<4; q++)
 	{
-		cout << "0\n";
-		return;
+		int k;
+		cin >> k;
+		vi a(k);
+		vinp(a, k);
+		if(q<2)
+		{
+			res = max(res, (a.back()-a.front())*h);
+		}
+		else
+		{
+			res = max(res, (a.back()-a.front())*w);
+		}
 	}
-	if(n%4)
-	{
-		cout << n/4 << "\n";
-	}
-	else
-	{
-		cout << (n/4)-1 << "\n";
-	}
+	cout << res << "\n";
 }
 
 int32_t main() {
@@ -57,7 +61,7 @@ int32_t main() {
     cin.tie(NULL);
     cout.tie(NULL);
 	int tt = 1;
-	// cin >> tt;
+	cin >> tt;
 	while(tt--)
 	{
 	    solve();

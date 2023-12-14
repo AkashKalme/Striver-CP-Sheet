@@ -1,3 +1,6 @@
+// A. Competitive Programmer
+// https://codeforces.com/problemset/problem/1266/A
+
 #include <bits/stdc++.h>
 
 #define int         long long int 
